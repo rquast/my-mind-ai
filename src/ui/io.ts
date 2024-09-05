@@ -9,7 +9,7 @@ import WebDAV from "./backend/webdav.js";
 import Image from "./backend/image.js";
 import GDrive from "./backend/gdrive.js";
 import Firebase from "./backend/firebase.js";
-
+import AnythingLLM from "./backend/anythingllm.js";
 
 type BUI = BackendUI<any>;
 
@@ -25,7 +25,7 @@ export function isActive() {
 }
 
 export function init() {
-	[Local, Firebase, GDrive, File, WebDAV, Image].forEach(ctor => {
+	[Local, Firebase, AnythingLLM, GDrive, File, WebDAV, Image].forEach(ctor => {
 		let bui = new ctor();
 		select.append(bui.option);
 	});
