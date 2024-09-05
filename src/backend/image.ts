@@ -28,7 +28,7 @@ export default class ImageBackend extends Backend {
 				canvas.getContext("2d")!.drawImage(img, 0, 0);
 
 				return new Promise(resolve => {
-					canvas.toBlob(blob => resolve(URL.createObjectURL(blob)), "image/png");
+					canvas.toBlob(blob => resolve(URL.createObjectURL(blob as Blob)), "image/png");
 				});
 			break;
 		}
